@@ -3,8 +3,13 @@ Bash script to create Linux users and provision SSH key-based access with privat
 
     #!/bin/bash
     set -e
+
+    if [ $# -ne 1 ]; then
+    echo "Usage: bash $0 <username>"
+    exit 1
+    fi
     
-    USERNAME="user"
+    USERNAME="$1"
     
     sudo mkdir pvt_keys
     sudo useradd -m -s /bin/bash "$USERNAME"
