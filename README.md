@@ -11,7 +11,7 @@ Bash script to create Linux users and provision SSH key-based access with privat
     
     USERNAME="$1"
     
-    sudo mkdir pvt_keys
+    sudo mkdir -p pvt_keys
     sudo useradd -m -s /bin/bash "$USERNAME"
     sudo ssh-keygen -f "./pvt_keys/$USERNAME" -N ""
     
