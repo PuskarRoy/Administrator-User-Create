@@ -26,3 +26,9 @@ Bash script to create Linux users and provision SSH key-based access with privat
     echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" | sudo EDITOR='tee -a' visudo
     
     sudo rm -rf pvt_keys
+
+# Windows Admin User Create
+PowerShell command to create a user with Administrator privilege.
+
+    NET USER username "password" /ADD  ; NET LOCALGROUP "Administrators" "username" /add
+
