@@ -4,12 +4,12 @@ Bash script to create Linux users and provision SSH key-based access with privat
     #!/bin/bash
     set -e
 
-    if [ $# -ne 1 ]; then
-    echo "Usage: bash $0 <username>"
+    read -rp "Enter username to create: " USERNAME
+    
+    if [[ -z "$USERNAME" ]]; then
+    echo "Error: Username cannot be empty"
     exit 1
     fi
-    
-    USERNAME="$1"
     
     sudo mkdir -p pvt_keys
     sudo useradd -m -s /bin/bash "$USERNAME"
